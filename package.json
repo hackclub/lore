@@ -1,5 +1,5 @@
 {
-  "name": "@hackclub/design-librarian",
+  "name": "@abby9664/design-librarian",
   "version": "0.0.1",
   "author": "Abby W <awong.sh@mysummitps.org>",
   "license": "MIT",
@@ -14,6 +14,8 @@
     "@hackclub/theme": "^0.3.0",
     "@mdx-js/loader": "^1.6.16",
     "@next/mdx": "^9.5.1",
+    "@slack/bolt": "^2.2.3",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
