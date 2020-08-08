@@ -4,6 +4,8 @@ A sample [Next.js] project for getting started with [MDX], [Theme UI], & [Hack C
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/git?s=https%3A%2F%2Fgithub.com%2Fhackclub%2Ftheme-starter&repo-name=theme-project)
 
+[![Run on Repl.it](https://repl.it/badge/github/abby9664/design-librarian)](https://repl.it/github/abby9664/design-librarian)
+
 [next.js]: https://nextjs.org
 [mdx]: https://mdxjs.com
 [theme ui]: https://theme-ui.com
