@@ -1,4 +1,4 @@
-# (Will change the README later. it doesn't fit this project)
+# (Will change the README later. it doesn't fit this project, which is still incomplete)
 
 A sample [Next.js] project for getting started with [MDX], [Theme UI], & [Hack Club Theme].
 
