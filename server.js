@@ -1,6 +1,6 @@
 const { App } = require('@slack/bolt')
 const Airtable = require('airtable');
-//use metascraper https://www.npmjs.com/package/scrape-meta
+//use metascraper https://www.npmjs.com/package/scrape-meta later
 const token = process.env.BOT_TOKEN
 const app = new App({
 	signingSecret: process.env.SIGNING_SECRET,

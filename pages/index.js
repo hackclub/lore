@@ -9,3 +9,7 @@ export default () => {
       <Text>They're gonna be great</Text>
   </Container>
 }
+
+export const getStaticProps = async () => {
+	
+}
