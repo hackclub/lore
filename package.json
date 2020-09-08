@@ -17,6 +17,7 @@
     "@next/mdx": "^9.5.1",
     "@slack/bolt": "^2.2.3",
     "airtable": "^0.9.0",
+    "date-fns": "^2.16.1",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.20",
     "next": "^9.5.1",
