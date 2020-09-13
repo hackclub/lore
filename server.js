@@ -1,6 +1,14 @@
 const { App } = require('@slack/bolt')
 const Airtable = require('airtable');
-//use metascraper https://www.npmjs.com/package/scrape-meta later
+const metascraper = require('metascraper')([
+  require('metascraper-description')(),
+  require('metascraper-image')(),
+  require('metascraper-logo-favicon')(),
+  require('metascraper-publisher')(),
+  require('metascraper-title')(),
+])
+
+const got = require('got');
 const token = process.env.BOT_TOKEN
 const app = new App({
 	signingSecret: process.env.SIGNING_SECRET,
@@ -47,16 +55,35 @@ const extractUrl = (message) => {
 	}
 };
 
+async function scrapeData (link) {
+	const { body: html, url } = await got(link)
+	const metadata = await metascraper({ html, url })
+	if (metadata.logo == null) {
+		metadata.logo = "https://images.emojiterra.com/google/android-10/512px/1f517.png"
+	}
+	if (metadata.publisher == null) {
+		metadata.publisher = metadata.title;
+	}
+	return(metadata)
+}
+
 app.event('message', async (body) => {
 	try {
 		if (typeof body.event.subtype === "undefined" && hasUrl(body.event.text)) {
 			let date = new Date(body.event.ts * 1000).toISOString();
 			let url = extractUrl(body.event.text);
 			let user = body.event.user;
+			let md = await scrapeData(url);
+			console.log(md);
 			base('test').create({
 				"date": date,
 				"url": url,
-				"user": user
+				"user": user, 
+				"title": md.title,
+				"description": md.description,
+				"publisher": md.publisher,
+				"img": md.image,
+				"favicon": md.logo
 			}, function(err, record) {
 				if (err) {
 					console.error(err);
