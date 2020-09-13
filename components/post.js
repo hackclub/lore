@@ -3,8 +3,8 @@ import tt from 'tinytime'
 
 function shorten(text) {
   let textSplit = text.split(' ')
-  if (textSplit.length > 25) {
-    let shortened = textSplit.slice(0, 25)
+  if (textSplit.length > 30) {
+    let shortened = textSplit.slice(0, 30)
     return shortened.join(' ') + '...'
   } else {
     return text
@@ -28,7 +28,7 @@ const Post = ({
         Posted at{' '}
         {tt('{MM} {DD}, {YYYY} at {h}:{mm} {a}').render(new Date(date))}
       </Text>
-      <Heading variant="subheadline" sx={{ mb: 1 }}>
+      <Heading sx={{ mb: 1 }}>
         {title}
       </Heading>
       <Text as="span" sx={{ display: 'flex', alignItems: 'center', mt: 0, mb: 2}}>
