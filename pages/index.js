@@ -44,5 +44,5 @@ export const getStaticProps = async () => {
   const { groupBy } = require('lodash')
   const data = await getLinks()
   const months = groupBy(data, d => d.date.substring(0, 7))
-  return { props: { data, months } }
+  return { props: { data, months }, revalidate: 1 }
 }
