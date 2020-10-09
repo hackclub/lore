@@ -1,11 +1,11 @@
-import { Container, Grid, Heading, Flex } from 'theme-ui'
+import { Box, Container, Grid, Heading } from 'theme-ui'
 import Post from '../components/post'
 import { format } from 'date-fns'
 
 export default ({ months }) => {
   return (
     <>
-      <Flex
+      <Box
         as="header"
         sx={{
           bg: 'sheet',
@@ -20,7 +20,7 @@ export default ({ months }) => {
         <Heading as="h1" variant="title" sx={{ mb: 3 }}>
           Design Library
         </Heading>
-      </Flex>
+      </Box>
       <Container>
         {Object.keys(months).map(key => (
           <>
