@@ -1,6 +1,8 @@
 import { Box, Container, Grid, Heading } from 'theme-ui'
 import Post from '../components/post'
 import { format } from 'date-fns'
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component'
+import 'react-vertical-timeline-component/style.min.css'
 
 export default ({ months }) => {
   return (
@@ -8,7 +10,6 @@ export default ({ months }) => {
       <Box
         as="header"
         sx={{
-          bg: 'sheet',
           color: 'primary',
           pt: [4, 5],
           pb: 3,
@@ -18,22 +19,20 @@ export default ({ months }) => {
         }}
       >
         <Heading as="h1" variant="title" sx={{ mb: 3 }}>
-          Design Library
+          The History of Hack Club
         </Heading>
       </Box>
-      <Container>
-        {Object.keys(months).map(key => (
+      <Container sx={{bg: 'sunken', width: ['100%', 'wide']}}>
+			<VerticalTimeline
+			>
+				{Object.keys(months).map(key => (
           <>
-            <Heading variant="headline" sx={{ color: 'accent' }}>
-              {format(new Date(`${key}-02`), 'MMMM yyyy')}
-            </Heading>
-            <Grid columns={[null, 2, 2]} gap={[3, 4]} sx={{ mb: [3, 4] }}>
               {months[key].map(post => (
                 <Post {...post} key={post.id} />
               ))}
-            </Grid>
           </>
         ))}
+			</VerticalTimeline>
       </Container>
     </>
   )
