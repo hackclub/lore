@@ -38,7 +38,7 @@ const Post = ({
 					<Markdown>{about}</Markdown>
 				</Text>
 			</Container>
-			<style jsx>{`
+			<style>{`
 				img {
 				  width: 100%;
 				}
