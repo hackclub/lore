@@ -38,6 +38,11 @@ const Post = ({
 					<Markdown>{about}</Markdown>
 				</Text>
 			</Container>
+			<style jsx>{`
+				img {
+				  width: 100%;
+				}
+		      `}</style>
 		</VerticalTimelineElement>
 	)
 
