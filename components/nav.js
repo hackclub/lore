@@ -98,7 +98,7 @@ export default () => {
         {!home ? <BackButton /> : <Flag />}
         <NavButton
           as="a"
-          href="https://github.com/abby9664/design-librarian"
+          href="https://github.com/hackclub/lore"
           aria-label="View source code on GitHub"
           sx={{ml:'auto'}}
         >

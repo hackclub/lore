@@ -40,8 +40,9 @@ export default ({ months }) => {
 
 export const getStaticProps = async () => {
   const { getLinks } = require('../lib/data')
-  const { groupBy } = require('lodash')
-  const data = await getLinks()
+  const { groupBy, orderBy } = require('lodash')
+  const data = orderBy(await getLinks(), 'date', 'desc')
   const months = groupBy(data, d => d.date.substring(0, 7))
+	console.log(months);
   return { props: { data, months }, revalidate: 1 }
 }

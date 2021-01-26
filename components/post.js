@@ -1,6 +1,7 @@
 import { Image, Text, Heading, Box, Container } from 'theme-ui'
 import tt from 'tinytime'
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
+import Markdown from 'markdown-to-jsx';
 
 function shorten(text) {
 	let textSplit = text.split(' ')
@@ -10,7 +11,7 @@ function shorten(text) {
 	} else {
 		return text
 	}
-}
+} // I might use this later for "...read more" component
 
 const Post = ({
 	id,
@@ -32,11 +33,10 @@ const Post = ({
 				</Heading>
 			</Box>
 			<Container>
-				<Text as="span" sx={{ display: 'flex', alignItems: 'center', mt: 0, mb: 2 }}>
-
-				</Text>
 				{/*<Image src={image} sx={{ mx: 'auto', maxWidth: ['auto', 512], height: 'auto' }} />*/}
-				<Text sx={{ p: 3, color: 'black', fontSize: [1, 2] }}>{about}</Text>
+				<Text sx={{ p: 3, color: 'black', fontSize: [1, 2] }}>
+					<Markdown>{about}</Markdown>
+				</Text>
 			</Container>
 		</VerticalTimelineElement>
 	)
