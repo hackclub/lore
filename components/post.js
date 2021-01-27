@@ -1,5 +1,6 @@
 import { Image, Text, Heading, Box, Container } from 'theme-ui'
 import tt from 'tinytime'
+import moment from 'moment'
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import Markdown from 'markdown-to-jsx';
 
@@ -26,7 +27,7 @@ const Post = ({
 			iconStyle={{ background: '#ec3750', color: '#ec3750' }}>
 			<Box sx={{ bg: 'primary', color: 'white', mb: 2, p: 3, borderRadius: "8px 8px 0 0" }}>
 				<Text variant="subheadline">
-					{tt('{MM} {DD}, {YYYY}').render(new Date(date))}
+					{moment(date).format('MMMM Do, YYYY')}
 				</Text>
 				<Heading as="h1" sx={{ mb: 1 }}>
 					{event}
@@ -35,12 +36,15 @@ const Post = ({
 			<Container>
 				{/*<Image src={image} sx={{ mx: 'auto', maxWidth: ['auto', 512], height: 'auto' }} />*/}
 				<Text sx={{ p: 3, color: 'black', fontSize: [1, 2] }}>
-					<Markdown>{about}</Markdown>
+					<Markdown options={{wrapper: 'Text'}}>{about}</Markdown>
 				</Text>
 			</Container>
 			<style>{`
 				img {
 				  width: 100%;
+				}
+				Text {
+					fontSize: 24px;
 				}
 		      `}</style>
 		</VerticalTimelineElement>
