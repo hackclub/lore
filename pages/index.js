@@ -3,10 +3,12 @@ import Post from '../components/post'
 import { format } from 'date-fns'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
+import HeadObject from '../components/head'
 
 export default ({ months }) => {
   return (
     <>
+    <HeadObject/>
       <Box
         as="header"
         sx={{
