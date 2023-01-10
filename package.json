@@ -15,7 +15,7 @@
     "@hackclub/theme": "^0.3.0",
     "@mdx-js/loader": "^1.6.16",
     "@next/mdx": "^9.5.1",
-    "@slack/bolt": "^2.6.1",
+    "@slack/bolt": "^3.12.2",
     "airtable": "^0.11.0",
     "date-fns": "^2.16.1",
     "got": "^11.6.2",
